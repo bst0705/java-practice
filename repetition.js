@@ -34,5 +34,45 @@
   const fishes = ["たこ","いか","さめ"];
   console.log(fishes);
 
-  /* インデックス番号
+  /* インデックス番号(配列の要素に備わる番号)
      インデックス番号は、0から始まる */
+  console.log(fishes[1]);
+  //要素の更新
+  fishes[1] = "くじら";
+  console.log(fishes[1]);
+
+  //配列と繰り返し処理
+  const animals = ["cat","dog","lion"];
+  for(let i=0;i<2;i++){
+    console.log(animals[i]);
+  }
+
+/* 配列.lengthとすることで、配列の要素数を取得できる。
+   配列の要素数が変わっても問題なく繰り返すことができるので便利 */
+   const fruits = ["apple","melon","gleep"];
+   console.log(fruits.length);
+   for(let i=0;i<fruits.length;i++){
+     console.log(fruits[i]);
+   }
+
+/* オブジェクト
+  オブジェクトは配列と同じく複数のデータをまとめて管理するのに用いられます。
+  配列は複数の値を並べて管理するのに対して、オブジェクトはそれぞれの値にプロパティと呼ばれる名前をつけて管理します。
+  配列  [値1,値2,値3] 
+  オブジェクト  {プロパティ1:値1,プロパティ2:値2}*/
+  const game = {gta:"ぐらせふ",cod:2}
+  console.log(game);
+  game.gta = "グラセフ"
+  console.log(game.gta);
+  console.log(game);
+
+/* オブジェクトを要素に持つ配列
+   配列の要素には、文字列や数値だけでなく、オブジェクトも使うことができます。その際、コードが横に長くなることを防ぐために、要素ごとに改行することがよくある
+   配列の中のオブジェクトのプロパティの値を取り出すには、
+  「配列[インデックス番号].プロパティ名」と書きます。 */
+   const characters = [
+     {name:"サムライ",price:200},
+     {name:"それがし",price:1000}
+   ];
+   console.log(characters[0]);
+   console.log(characters[1].name);
