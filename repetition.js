@@ -76,3 +76,49 @@
    ];
    console.log(characters[0]);
    console.log(characters[1].name);
+
+//まとめ
+const chracters = [
+  {name: "にんじゃわんこ", age: 14},
+  {name: "ひつじ仙人", age: 100},
+  {name: "ベイビーわんこ", age: 5},
+];
+
+for (let i=0;i<chracters.length;i++) {
+  console.log("--------------------");
+  const chracter = chracters[i];
+  console.log(`名前は${chracter.name}です`);
+  console.log(`${chracter.age}歳です`);
+}
+
+//オブジェクトの中にオブジェクト
+const cafe = {
+  name: "Progateカフェ",
+  businessHours: {
+    opening:"10:00(AM)",
+    closing:"8:00(PM)"
+  }
+};
+
+console.log(`店名:${cafe.name}`);
+console.log(`営業時間:${cafe.businessHours.opening}から${cafe.businessHours.closing}`);
+
+
+//オブジェクトの中に配列
+const caf = {
+  name: "Progateカフェ",
+  businessHours: {
+    opening: "10:00(AM)",
+    closing: "8:00(PM)"
+  },
+  menus:["コーヒー","紅茶","チョコレートケーキ"]
+};
+
+console.log(`店名: ${caf.name}`);
+console.log(`営業時間:${caf.businessHours.opening}から${caf.businessHours.closing}`);
+console.log(`----------------------------`);
+console.log("おすすめメニューはこちら");
+
+for(let i = 0; i<caf.menus.length; i++){
+  console.log(caf.menus[i]);
+}
