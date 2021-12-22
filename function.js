@@ -60,3 +60,24 @@ if(check(123)){
 else{
   console.log("3の倍数ではありません");
 }
+
+/* スコープ
+   定数や変数の使用できる範囲のことをスコープと呼びます。スコープは、定数や変数を定義した場所によって異なります。
+   関数の内側に定義した定数や変数のスコープは、関数の内側のみになります。関数の外側で使おうとすると、参照エラー(ReferenceError)が発生します。
+   関数の内側と外側で同じ名前の変数を定義した場合は、それらは別々のものとして扱われます。
+   関数だけでなく、ifやswitchなどの条件文、forやwhileなどの繰り返し文などの、中括弧「{}」を使う構文でもスコープを作ります。 */
+   const name = "さめちゃん";
+
+   const vtuber = ()=>{
+     const name = "ぺこら";
+     console.log(name);
+   }
+   vtuber();
+   console.log(name);
+
+// 練習問題  時間を分に直す関数
+   const toMinutes = (hour,minute)=>{
+    return hour*60 + minute;
+   };
+   const resul = toMinutes(1,35);
+   console.log(resul);
