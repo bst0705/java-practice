@@ -122,3 +122,15 @@ console.log("おすすめメニューはこちら");
 for(let i = 0; i<caf.menus.length; i++){
   console.log(caf.menus[i]);
 }
+
+/* オブジェクトの「値」の部分には、関数を用いることもできます。
+下図のようにプロパティの値として関数を記述します。また、その関数を呼び出すには、「定数名.プロパティ名()」とします。プロパティ名の後ろの()を忘れないようにしましょう。 */
+const vtuber = {
+  class2:"ふぶき",
+  class3:()=>{
+    console.log("こんぺこ こんぺこ こんぺこ〜");
+  }
+};
+
+console.log(vtuber.class2);
+vtuber.class3();
