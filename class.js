@@ -45,8 +45,19 @@
 
     ・メソッド内で他メソッドを使う
       メソッド内で「this.メソッド名()」とすることで、同じクラスの他のメソッドを使うことができます。
+
+  ・継承
+      新しく作成するクラスが既存のクラスの一種である場合、「継承」という方法を用いることで非常に効率よく作業を進めることができます。
+      「継承」とは、すでにあるクラスをもとに、新しくクラスを作成する方法のことです。
+      例えば「Animalクラス」から「Dogクラス」を継承すると、「Animalクラス」の全ての機能を引き継いで、「Dogクラス」を作成することができます。
+      継承を用いてクラスを作成するには「extends」を用います。
+      また、継承では元となるクラスを親クラス（今回はAnimalクラス）、新しく作成するクラスを子クラス（今回はDogクラス）と呼びます。
+
+    ・継承(子要素にメソッド追加)
+        メソッドでは、関数と同じように戻り値を用いることができます。
+        子クラスで定義した独自のメソッドは、親クラスから呼び出すことはできません。AnimalクラスのインスタンスからgetHumanAgeメソッドを呼び出すとエラーが発生してしまいます。
   */
-   class Anima {
+  class Anima {
     constructor(name,age) {
       this.name = name;
       this.age = age;
@@ -65,3 +76,14 @@
   console.log(`年齢: ${anima.age}`);
   anima.greet();
   anima.info();
+
+  class Dog extends Anima {
+    getHumanAge(){
+      return this.age*7;
+    }
+  };
+
+  const dog = new Dog("ココア",5);
+  dog.info();
+  const humanAge = dog.getHumanAge();
+  console.log(`${dog.name}さんの人間年齢は${humanAge}歳です`);
