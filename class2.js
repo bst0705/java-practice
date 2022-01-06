@@ -1,37 +1,42 @@
 /* オーバーライド
     親クラスと同じ名前のメソッドを子クラスに定義すると、子クラスのメソッドが優先して使用されます。
-    これは、子クラスのメソッドが親クラスのメソッドを上書きしていることから、オーバーライドと呼ばれます。 */
-
-class Animal {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+    これは、子クラスのメソッドが親クラスのメソッドを上書きしていることから、オーバーライドと呼ばれます。
   
-  greet() {
-    console.log("こんにちは");
-  }
-  
-  info() {
-    this.greet();
-    console.log(`名前は${this.name}です`);
-    console.log(`${this.age}歳です`);
-  }
-}
+  コンストラクタのオーバーライド（1）  */
 
-class Dog extends Animal {
-  info(){
-    this.greet();
-    console.log(`名前は${this.name}です`);
-    console.log(`${this.age}歳です`);
-    const humanAge = this.getHumanAge();
-    console.log(`人間年齢で${humanAge}歳です`);
+  class Animal {
+    constructor(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    greet() {
+      console.log("こんにちは");
+    }
+
+    info() {
+      this.greet();
+      console.log(`名前は${this.name}です`);
+      console.log(`${this.age}歳です`);
+    }
   }
 
-  getHumanAge() {
-    return this.age * 7;
-  }
-}
+  class Dog extends Animal {
+    constructor(name,age,breed){
+      super(name, age);
+      this.breed = breed;
+    }
 
-const dog = new Dog("レオ", 4);
-dog.info();
+    info() {
+      this.greet();
+      console.log(`名前は${this.name}です`);
+      console.log(`犬種は${this.breed}です`);
+      console.log(`${this.age}歳です`);
+      const humanAge = this.getHumanAge();
+      console.log(`人間年齢で${humanAge}歳です`);
+    }
+
+    getHumanAge() {
+      return this.age * 7;
+    }
+  }
